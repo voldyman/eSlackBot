@@ -91,6 +91,7 @@ if __name__ == '__main__':
     
     lpf = LaunchpadFetcher(consumer)
     while True:
+        print str(datetime.now()) +": Fetching merge proposals"
         lpf.fetch_merge_requests()
         lpf.update_last_checked()
 
