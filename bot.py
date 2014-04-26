@@ -37,7 +37,7 @@ class LaunchpadFetcher:
         lp = Launchpad.login_anonymously(config.bot_name, 'production', config.cache_dir)
         
         self.elementary_prj = lp.projects[config.project_name]
-        self.last_checked = datetime(2014 ,4, 4, 4)
+        self.last_checked = datetime.utcnow()
 
         self.consumer = consumer
 
