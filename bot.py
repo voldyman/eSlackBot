@@ -2,6 +2,7 @@ from launchpadlib.launchpad import Launchpad
 from datetime import datetime
 from functools import reduce
 import requests
+from time import sleep
 import config
 
 def compose(*func):
@@ -89,4 +90,8 @@ if __name__ == '__main__':
     consumer.send(None)
     
     lpf = LaunchpadFetcher(consumer)
-    lpf.fetch_merge_requests()
+    while True:
+        lpf.fetch_merge_requests()
+        lpf.update_last_checked()
+
+        sleep(config.sleep_time)

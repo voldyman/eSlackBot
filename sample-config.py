@@ -1,3 +1,5 @@
+# sleep for 1 hour
+sleep_time = 60 * 60 * 1
 
 bot_name = "elementary-merge-slacker"
 cache_dir = "~/.launchpadlib/cache"
